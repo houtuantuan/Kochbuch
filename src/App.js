@@ -1,8 +1,8 @@
 
 import { createClient } from "contentful";
 import { useEffect, useState } from "react";
-import {Route,Routes} from "react-router-dom";
 
+import {Route,Routes} from "react-router-dom";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -14,7 +14,7 @@ function App() {
 
   const getData = async () => {
     const entryItems = await client.getEntries();
-    console.log(1111)
+
     console.log("ENTRIES: ", entryItems.items);
     setRecipes(entryItems.items);
   };
@@ -27,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <h1>CONTENTFUL TEST</h1>
+
       {recipes.map((recipe, index) => (
         <div key={index}>
           <p>{recipe.fields.rezeptName}</p>
@@ -34,6 +35,7 @@ function App() {
           <ul>
             {recipe.fields.anleitung.map((e)=>(<p>{e}</p>))}
           </ul>
+
         </div>
       ))}
     </div>
