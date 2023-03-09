@@ -2,6 +2,13 @@
 import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 
+import { Route, Routes } from "react-router-dom";
+import "./styles.css";
+import Main from "./components/Main";
+import Row from "react-bootstrap/Row";
+import Col from 'react-bootstrap/Col';
+import { Container } from "react-bootstrap";
+
 import {Route,Routes} from "react-router-dom";
 
 function App() {
@@ -23,22 +30,25 @@ function App() {
     getData();
   }, []);
 
-
   return (
-    <div className="App">
-      <h1>CONTENTFUL TEST</h1>
 
-      {recipes.map((recipe, index) => (
-        <div key={index}>
-          <p>{recipe.fields.rezeptName}</p>
-          <img src={recipe.fields.rezeptBilder.fields.file.url} />
-          <ul>
-            {recipe.fields.anleitung.map((e)=>(<p>{e}</p>))}
-          </ul>
 
-        </div>
-      ))}
+    <div className="mainContainer">
+      <Row xs={1} sm={2} md={3} className="g-4">
+        {recipes.map((recipe, index) =>
+          <Col>
+            <Main
+              recipe={recipe}
+              key={index} />
+          </Col>
+        )
+        }
+      </Row>
+
+
+
     </div>
+
   );
 }
 

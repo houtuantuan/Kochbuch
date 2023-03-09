@@ -1,0 +1,21 @@
+.recipePic {
+
+    object-fit: cover;
+    width: 100%;
+    height: 25em;
+    object-position:  center 40%;
+
+}
+
+.mainContainer {
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.picContainer {
+    border: solid pink;
+    width: 80%; 
+
+}
