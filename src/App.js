@@ -33,22 +33,23 @@ function App() {
 
   return (
 
-
-    <div className="mainContainer">
-      <Container>
-        <Row xs={1} sm={2} md={3} className="g-4">
-          {recipes.map((recipe, index) =>
-            <Col>
-              <Main
-                recipe={recipe}
-                key={index} />
-            </Col>
-          )
-        }
-        </Row>
-      </Container>
-      <Footer/>
-    </div>
+    <>
+      <div className="mainContainer">
+        <Container>
+          <Row xs={1} sm={2} md={3} className="g-4">
+            {recipes.map((recipe, index) =>
+              <Col>
+                <Main
+                  recipe={recipe}
+                  key={index} />
+              </Col>
+            )
+          }
+          </Row>
+        </Container>
+      </div>
+        <Footer/>
+    </>
   );
 }
 
