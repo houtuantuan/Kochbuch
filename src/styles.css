@@ -19,3 +19,32 @@
     width: 80%; 
 
 }
+
+/* --------------------------------- */
+
+
+
+/* -------------------start-Nico-css-jetz-Suat-css-:D------------------------------- */
+/* -------------------start-Nico-css-jetz-Suat-css-:D------------------------------- */
+/* -------------------start-Nico-css-jetz-Suat-css-:D------------------------------- */
+
+#background {
+    background-color: rgb(67, 67, 67);
+    height: 32vh;
+    /*width: 100%;
+    margin-top: 15vh;
+    bottom: 0;
+    position: absolute; :)*/
+}
+
+#firsttitle {
+    margin-bottom: 5%;
+}
+
+.footerMargin {
+    margin-bottom: 5%;
+}
+
+.form-label {
+    color: white;
+}

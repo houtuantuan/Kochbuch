@@ -2,14 +2,15 @@
 import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 
-import { Route, Routes } from "react-router-dom";
+
 import "./styles.css";
 import Main from "./components/Main";
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container"
+import Footer from "./components/Footer";
 
-import {Route,Routes} from "react-router-dom";
+
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -34,21 +35,20 @@ function App() {
 
 
     <div className="mainContainer">
-      <Row xs={1} sm={2} md={3} className="g-4">
-        {recipes.map((recipe, index) =>
-          <Col>
-            <Main
-              recipe={recipe}
-              key={index} />
-          </Col>
-        )
+      <Container>
+        <Row xs={1} sm={2} md={3} className="g-4">
+          {recipes.map((recipe, index) =>
+            <Col>
+              <Main
+                recipe={recipe}
+                key={index} />
+            </Col>
+          )
         }
-      </Row>
-
-
-
+        </Row>
+      </Container>
+      <Footer/>
     </div>
-
   );
 }
 
