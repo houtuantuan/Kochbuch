@@ -1,17 +1,29 @@
 
 import { createClient } from "contentful";
 import { useEffect, useState } from "react";
-
-
 import "./styles.css";
 import Main from "./components/Main";
-
 import Recipe from "./components/Recipe"
-
+import Footer from "./components/Footer";
+import {Routes , Route} from "react-router-dom";
+import Error from "./components/Error";
 
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+
+
+
+  function create_UUID(){
+    var dt = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random()*16)%16 | 0;
+        dt = Math.floor(dt/16);
+        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+}
+
 
   const client = createClient({
     space: "g7wwoqw7k7vb",
@@ -21,8 +33,7 @@ function App() {
   const getData = async () => {
     const entryItems = await client.getEntries();
 
-    // console.log(1111)
-    // console.log("ENTRIES: ", entryItems.items);
+
 
     setRecipes(entryItems.items);
   };
@@ -32,12 +43,15 @@ function App() {
   }, []);
 
   return (
+    <>
 
-    <Routes>
-      <Route path="/" element={<Main recipes={recipes} />}/>
-      <Route key="aaa" path="/:index" element={<Recipe recipes={recipes}/>}/>
-    </Routes>
-
+      <Routes>
+        <Route path="/" element={<Main recipes={recipes} />}/>
+        <Route key={create_UUID()} path="/:index" element={<Recipe recipes={recipes}/>}/>
+        <Route path="*" element={<Error/>}/>
+      </Routes>
+      <Footer/>
+    </>
 
   );
 }
