@@ -5,10 +5,8 @@ import { useEffect, useState } from "react";
 
 import "./styles.css";
 import Main from "./components/Main";
-import Row from "react-bootstrap/Row";
-import Col from 'react-bootstrap/Col';
-import Container from "react-bootstrap/Container"
-import Footer from "./components/Footer";
+
+import Recipe from "./components/Recipe"
 
 
 
@@ -23,7 +21,9 @@ function App() {
   const getData = async () => {
     const entryItems = await client.getEntries();
 
-    console.log("ENTRIES: ", entryItems.items);
+    // console.log(1111)
+    // console.log("ENTRIES: ", entryItems.items);
+
     setRecipes(entryItems.items);
   };
 
@@ -33,23 +33,12 @@ function App() {
 
   return (
 
-    <>
-      <div className="mainContainer">
-        <Container>
-          <Row xs={1} sm={2} md={3} className="g-4">
-            {recipes.map((recipe, index) =>
-              <Col>
-                <Main
-                  recipe={recipe}
-                  key={index} />
-              </Col>
-            )
-          }
-          </Row>
-        </Container>
-      </div>
-        <Footer/>
-    </>
+    <Routes>
+      <Route path="/" element={<Main recipes={recipes} />}/>
+      <Route key="aaa" path="/:index" element={<Recipe recipes={recipes}/>}/>
+    </Routes>
+
+
   );
 }
 
