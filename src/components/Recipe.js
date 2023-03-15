@@ -8,6 +8,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { ListGroupItem } from 'react-bootstrap';
 
 
 
@@ -30,23 +31,41 @@ export default function Recipe({ recipes }) {
                 <h2 className="text-success" style={{ width: "50%" }}>{recipe && recipe.fields.rezeptName}</h2>
 
 
-                <Row className="mb-5">
+                <Row className="mb-3">
 
-                    <Col xs={12} md={8} style={{ display: "flex" }}>
-                        <Image style={{ width: "60%", maxWidth: 400, borderRadius: "1% 0 0 1%" }}
+                    <Col xs={12} md={8} style={{ display: "flex", border: "none" }}>
+                        <Image style={{ height: "100%", width: "60%", maxWidth: 400, borderRadius: "1% 0 0 1%" }}
                             src={recipe && recipe.fields.rezeptBilder.fields.file.url} />
-                        <ListGroup >
-                            <ListGroup.Item key="Zutaten">Zutaten</ListGroup.Item>
-                            <ListGroup.Item key="Zubereitungszeit">
-                                Zubereitungszeit
-                            </ListGroup.Item>
+
+                        <ListGroup style={{ height: "100%" }} className="w-50" >
+                            {recipe && recipe.fields.infos.map((info, i) =>
+                                <>
+                                    <ListGroup.Item className="text-secondary p-3 bg-light border" key={i} as="li">
+                                        {info.split(":")[0]}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item as="li">
+                                        {info.split(":")[1]}
+                                    </ListGroup.Item>
+                                </>)}
+                            <ListGroupItem>
+                                <Button style={{ width: "70px", marginRight: "10%" }}>share</Button>
+
+
+                            </ListGroupItem>
+                            <ListGroupItem>
+
+                            <Button style={{ width: "70px" }}>save</Button>
+                            </ListGroupItem>
+
                         </ListGroup>
+
                     </Col>
                     <Col md={4}>
                         <h4>Empfohlen</h4>
                         <Card style={{ width: '15rem' }}>
-                            <Card.Img variant="top" src={recommendation && recommendation.fields.rezeptBilder.fields.file.url} />
-                            <Card.Body>
+                            <Card.Img variant="top" style={{ height: '70%' }}
+                                src={recommendation && recommendation.fields.rezeptBilder.fields.file.url} />
+                            <Card.Body className='h-50'>
                                 <Card.Title>{recommendation && recommendation.fields.rezeptName}</Card.Title>
                                 <Card.Text>
                                     {recommendation && recommendation.fields.beschreibung}
