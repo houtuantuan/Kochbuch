@@ -47,8 +47,8 @@ function App() {
       <Container>
         <Navibar />
         <Routes>
-          <Route path="/" element={<Main recipes={recipes} />}/>
-          <Route key={create_UUID()} path="/:index" element={<Recipe recipes={recipes}/>}/>
+          <Route path="/Kochbuch" element={<Main recipes={recipes} />}/>
+          <Route key={create_UUID()} path="/Kochbuch/:index" element={<Recipe recipes={recipes}/>}/>
           <Route path="*" element={<Error/>}/>
         </Routes>
         <Footer/>

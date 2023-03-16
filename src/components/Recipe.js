@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { ListGroupItem } from 'react-bootstrap';
+import Error from './Error';
 
 
 
@@ -23,8 +24,15 @@ export default function Recipe({ recipes }) {
     } while (randomIndex == index)
     const recommendation = recipes[randomIndex];
 
+    console.log(isNaN(index))
+    console.log(index < 0)
+    console.log(index >= recipes.length)
+
     return (
         <>
+        {
+            isNaN(index) || index < 0 || index >= recipes.length?
+            <Error/>:
             <Container className='mt-5'>
                 <h2 className="text-success" style={{ width: "50%" }}>{recipe && recipe.fields.rezeptName}</h2>
                 <Row className="mb-3">
@@ -59,7 +67,7 @@ export default function Recipe({ recipes }) {
                                 <Card.Text>
                                     {recommendation && recommendation.fields.beschreibung}
                                 </Card.Text>
-                                <Link to={`/${randomIndex}`}>
+                                <Link to={`/Kochbuch/${randomIndex}`}>
                                     <Button variant="primary">Go </Button>
                                 </Link>
                             </Card.Body>
@@ -90,6 +98,7 @@ export default function Recipe({ recipes }) {
                     </Col>
                 </Row>
             </Container>
+}
         </>
     )
 }

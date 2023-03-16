@@ -26,7 +26,7 @@ export default function Main({ recipes }) {
                                     <Card.Text>
                                         {recipe && recipe.fields.beschreibung}
                                     </Card.Text>
-                                    <Link to={`/${index}`}>
+                                    <Link to={`/Kochbuch/${index}`}>
                                         <Button variant="primary">check it</Button>
                                     </Link>
                                 </Card.Body>
