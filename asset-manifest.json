@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Kochbuch/static/css/main.f42fa00d.css",
-    "main.js": "/Kochbuch/static/js/main.a4f33fd5.js",
+    "main.js": "/Kochbuch/static/js/main.89d46a57.js",
     "index.html": "/Kochbuch/index.html",
     "main.f42fa00d.css.map": "/Kochbuch/static/css/main.f42fa00d.css.map",
-    "main.a4f33fd5.js.map": "/Kochbuch/static/js/main.a4f33fd5.js.map"
+    "main.89d46a57.js.map": "/Kochbuch/static/js/main.89d46a57.js.map"
   },
   "entrypoints": [
     "static/css/main.f42fa00d.css",
-    "static/js/main.a4f33fd5.js"
+    "static/js/main.89d46a57.js"
   ]
 }
