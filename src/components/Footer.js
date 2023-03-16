@@ -8,13 +8,13 @@ import Form from "react-bootstrap/Form"
 export default function Footer() {
   return (
     
-      <footer id='background'>
+      <footer id='background'style={{marginTop:"3%"}}>
         <Container>
           <Row>
             <Col>
               <p className='text-center'>
-                <a onClick={(e)=>e.preventDefault()} href='' className='btn btn-outline-success'>Impressum</a>
-                <a onClick={(e)=>e.preventDefault()} href='' className='btn btn-outline-success'>Datenschutz</a>
+                <a onClick={(e)=>e.preventDefault()} href='' className='btn btn-outline-success m-4'>Impressum</a>
+                <a onClick={(e)=>e.preventDefault()} href='' className='btn btn-outline-success m-4'>Datenschutz</a>
               </p>
             </Col>
           </Row>

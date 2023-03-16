@@ -37,7 +37,7 @@ export default function Main({ recipes }) {
                 </Row>
             </Container>
             {/* ---------------------------mein-Part------------------------------------------------------------------------------- */}
-            <div>
+            <div style={{marginTop:"3%"}}>
                 <Container>
                 <Row>
                     <Col>

@@ -25,7 +25,7 @@ export default function Recipe({ recipes }) {
 
     return (
         <>
-            <Container>
+            <Container className='mt-5'>
                 <h2 className="text-success" style={{ width: "50%" }}>{recipe && recipe.fields.rezeptName}</h2>
                 <Row className="mb-3">
                     <Col xs={12} md={8} style={{ display: "flex", border: "none" }}>
@@ -80,7 +80,7 @@ export default function Recipe({ recipes }) {
                     </Col>
                     <Col xs={12} md={6}>
                         <ListGroup as="ul">
-                            <ListGroup.Item as="li" active>Arbeitsschritte für Limoncello Spritz</ListGroup.Item>
+                            <ListGroup.Item as="li" active>Arbeitsschritte</ListGroup.Item>
                             {recipe && recipe.fields.anleitung.map((an, i) =>
                                 <ListGroup.Item key={i} as="li">
                                     {an}
