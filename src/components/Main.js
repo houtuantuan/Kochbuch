@@ -5,11 +5,15 @@ import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import  Container  from "react-bootstrap/Container";
 import { Link } from 'react-router-dom';
+import Searchbar from './Searchbar';
 
 
 export default function Main({ recipes }) {
     return (
+        < >
+        <Searchbar />
         <div className="mainContainer">
+    
             <Container>
                 <Row xs={1} sm={2} md={3} className="g-4">
                     {recipes && recipes.map((recipe, index) =>
@@ -92,5 +96,6 @@ export default function Main({ recipes }) {
             </div>
 
         </div>
+        </ >
     )
 }

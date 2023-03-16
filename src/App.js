@@ -7,6 +7,8 @@ import Recipe from "./components/Recipe"
 import Footer from "./components/Footer";
 import {Routes , Route} from "react-router-dom";
 import Error from "./components/Error";
+import Navibar from "./components/Navibar";
+
 
 
 function App() {
@@ -34,6 +36,19 @@ function App() {
     const entryItems = await client.getEntries();
 
 
+  //   const posts = items.map(post => ({
+  //     url: `/blog/${post.fields.slug}/`,
+  //     // remove markdown syntax for better search results
+  //     content: removeMd(post.fields.body),
+  //     title: post.fields.title,
+  //     // make entry id to objectID
+  //     objectID: post.sys.id
+  //   }));
+  // } catch(err) {
+  //   console.error(err);
+  // }
+
+
 
     setRecipes(entryItems.items);
   };
@@ -45,6 +60,7 @@ function App() {
   return (
     <>
 
+      <Navibar />
       <Routes>
         <Route path="/" element={<Main recipes={recipes} />}/>
         <Route key={create_UUID()} path="/:index" element={<Recipe recipes={recipes}/>}/>
