@@ -27,10 +27,9 @@ function App() {
     return uuid;
 }
 
-
   const client = createClient({
-    space: "g7wwoqw7k7vb",
-    accessToken: "6vacSQq_qoG6HEtSss7ZTCoHm74Sr8yTUUEbOK6PXDY",
+    space: process.env.REACT_APP_CONTENTFUL_SPACE,
+    accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
   });
 
   const getData = async () => {
