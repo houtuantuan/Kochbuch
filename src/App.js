@@ -40,6 +40,7 @@ function App() {
     <>
       <Container>
         <h1>Hello from the Cookbook</h1>
+        {JSON.stringify(recipes)}
         {/* <Navibar /> */}
         {/* <Routes>
           <Route path="/" element={<Main recipes={recipes} />}/>

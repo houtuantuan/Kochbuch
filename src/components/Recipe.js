@@ -20,7 +20,7 @@ export default function Recipe({ recipes }) {
     let randomIndex = 0;
     do {
         randomIndex = Math.floor(Math.random() * recipes.length)
-    } while (randomIndex == index)
+    } while (randomIndex === index)
     const recommendation = recipes[randomIndex];
 
     return (
