@@ -27,30 +27,39 @@ function App() {
     return uuid;
 }
 
-  const client = createClient({
-    space: process.env.REACT_APP_CONTENTFUL_SPACE,
-    accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
-  });
+  // const client = createClient({
+  //   space: process.env.REACT_APP_CONTENTFUL_SPACE,
+  //   accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
+  // });
 
-  const getData = async () => {
-    const entryItems = await client.getEntries();
-    setRecipes(entryItems.items);
-  };
+  // const getData = async () => {
+  //   const entryItems = await client.getEntries();
+  //   setRecipes(entryItems.items);
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+  
 
   useEffect(() => {
-    getData();
+    fetch("http://localhost:4000/Kochbuch")
+      .then((res) => res.json())
+      .then((data) => setRecipes(data.message));
+
   }, []);
 
   return (
     <>
       <Container>
-        <Navibar />
+        {/* <Navibar />
         <Routes>
           <Route path="/Kochbuch" element={<Main recipes={recipes} />}/>
           <Route key={create_UUID()} path="/Kochbuch/:index" element={<Recipe recipes={recipes}/>}/>
           <Route path="*" element={<Error/>}/>
-        </Routes>
-        <Footer/>
+        </Routes> */}
+        <p>111111111{recipes}</p>
+        {/* <Footer/> */}
       </Container>
     </>
 
