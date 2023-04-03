@@ -12,6 +12,7 @@ import { ListGroupItem } from 'react-bootstrap';
 
 
 
+
 export default function Recipe({ recipes }) {
     const { index } = useParams();
     const recipe = recipes[index];
@@ -40,8 +41,6 @@ export default function Recipe({ recipes }) {
         randomIndex = Math.floor(Math.random() * recipes.length)
     } while (randomIndex === index)
     const recommendation = recipes[randomIndex];
-
-
 
     return (
         <>
@@ -76,7 +75,7 @@ export default function Recipe({ recipes }) {
                                 <Card.Text>
                                     {recommendation && recommendation.beschreibung}
                                 </Card.Text>
-                                <Link to={`/${randomIndex}`}>
+                                <Link to={`/Kochbuch/${randomIndex}`}>
                                     <Button variant="primary">Go </Button>
                                 </Link>
                             </Card.Body>
