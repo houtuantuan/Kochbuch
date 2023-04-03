@@ -19,11 +19,11 @@ export default function Main({ recipes }) {
                             <Col key={index}>
                                 <Card bg='light' border="success" className='picContainer'>
                                     <Card.Img
-                                        className="recipePic" variant="top" src={recipe && recipe.fields.rezeptBilder.fields.file.url} />
+                                        className="recipePic" variant="top" src={recipe && recipe.rezeptbild} />
                                     <Card.Body>
-                                        <Card.Title>{recipe && recipe.fields.rezeptName}</Card.Title>
+                                        <Card.Title>{recipe && recipe.rezeptname}</Card.Title>
                                         <Card.Text>
-                                            {recipe && recipe.fields.beschreibung}
+                                            {recipe && recipe.beschreibung}
                                         </Card.Text>
                                         <Link to={`/${index}`}>
                                             <Button variant="primary">check it</Button>
