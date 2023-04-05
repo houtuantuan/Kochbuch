@@ -20,7 +20,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const getMemes = await fetch('http://localhost:8000/home');
+      const getMemes = await fetch('https://kochbuch.onrender.com');
       if (!getMemes) throw new Error(`Request failes with a status of ${getMemes.status}`);
       const parseData = await getMemes.json();
       setRecipes(parseData.rows);
