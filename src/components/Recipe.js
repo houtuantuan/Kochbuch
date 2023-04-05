@@ -51,7 +51,7 @@ export default function Recipe({ recipes }) {
                         <Image style={{ height: "100%", width: "60%", maxWidth: 400, borderRadius: "1% 0 0 1%" }}
                             src={recipe && recipe.rezeptbild} />
                         <ListGroup style={{ height: "100%" }} className="w-50" >
-                            {newValue.map((i) =>
+                            {newValue && newValue.map((i) =>
                                 <>
                                     <ListGroup.Item className="text-secondary p-3 bg-light border" key={i} as="li">
                                         {i}
@@ -75,7 +75,7 @@ export default function Recipe({ recipes }) {
                                 <Card.Text>
                                     {recommendation && recommendation.beschreibung}
                                 </Card.Text>
-                                <Link to={`/Kochbuch/${randomIndex}`}>
+                                <Link to={`/${randomIndex}`}>
                                     <Button variant="primary">Go </Button>
                                 </Link>
                             </Card.Body>
@@ -86,7 +86,7 @@ export default function Recipe({ recipes }) {
                     <Col xs={12} md={6}>
                         <ListGroup as="ul">
                             <ListGroup.Item as="li" active>Zutaten</ListGroup.Item>
-                            {newZutat.map((i) =>
+                            {newZutat && newZutat.map((i) =>
                                 <>
                                     <ListGroup.Item key={i} as="li">
                                         {i}
@@ -97,7 +97,7 @@ export default function Recipe({ recipes }) {
                     <Col xs={12} md={6}>
                         <ListGroup as="ul">
                             <ListGroup.Item as="li" active>Arbeitsschritte</ListGroup.Item>
-                            {recipe && newAnleitung.map((i) =>
+                            {newAnleitung && newAnleitung.map((i) =>
                                 <ListGroup.Item key={i} as="li">
                                     {i}
                                 </ListGroup.Item>
