@@ -11,6 +11,6 @@ app.use(express.urlencoded({ extended: true }))
 //     res.send('Hello World')
 // })
 
-app.use('/home', routes);
+app.use('/', routes);
 
 module.exports = app;
