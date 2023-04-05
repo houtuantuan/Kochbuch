@@ -44,8 +44,8 @@ function App() {
             <h1>Hello from the Cookbook</h1>
             <Navibar />
             <Routes>
-              <Route path="/" element={<Main recipes={recipes} />}/>
-              <Route key={1} path="/:index" element={<Recipe recipes={recipes}/>}/>
+              <Route path="/Kochbuch" element={<Main recipes={recipes} />}/>
+              <Route key={1} path="Kochbuch/:index" element={<Recipe recipes={recipes}/>}/>
               <Route path="*" element={<Error/>}/>
             </Routes>
             <Footer/>

@@ -75,7 +75,7 @@ export default function Recipe({ recipes }) {
                                 <Card.Text>
                                     {recommendation && recommendation.beschreibung}
                                 </Card.Text>
-                                <Link to={`/${randomIndex}`}>
+                                <Link to={`/Kochbuch/${randomIndex}`}>
                                     <Button variant="primary">Go </Button>
                                 </Link>
                             </Card.Body>
